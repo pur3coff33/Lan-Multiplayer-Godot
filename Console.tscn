@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Console.gd" type="Script" id=1]
+
+[node name="Console" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 104.0
+margin_top = 40.0
+margin_right = 1145.0
+margin_bottom = 621.0
+color = Color( 0.105882, 0.0980392, 0.0980392, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="console_text" type="RichTextLabel" parent="."]
+margin_left = 115.0
+margin_top = 46.0
+margin_right = 1131.0
+margin_bottom = 612.0
+focus_mode = 2
+text = "CONSOLE
+
+Welcome to 1v1 LODS!
+
+commands:
+
+	create [username]
+	join [hostIPAddress] [username]"
+scroll_following = true
+selection_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="txt_commands" type="LineEdit" parent="."]
+margin_left = 103.0
+margin_top = 624.0
+margin_right = 1145.0
+margin_bottom = 648.0
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="text_entered" from="txt_commands" to="." method="_on_txt_commands_text_entered"]
